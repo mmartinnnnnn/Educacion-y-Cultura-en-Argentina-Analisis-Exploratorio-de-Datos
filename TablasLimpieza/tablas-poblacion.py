@@ -1,16 +1,7 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Created on Sat May 17 20:00:22 2025
-
-@author: lucas
-"""
-
 #%% imports
 
 import pandas as pd
 import duckdb as dd
-
 
 #%% funciones auxiliares
 
@@ -23,7 +14,6 @@ def extraerIdDepto(stringArea):
     else:
         return idDepto
     
-
 #%% lecturas archivos originales
 
 bibliotecasOriginal = pd.read_csv("bibliotecas-populares.csv")
