@@ -1,6 +1,6 @@
 # Análisis de Establecimientos Educativos y Bibliotecas Populares en Argentina
 
-Trabajo Práctico 01 de la materia **Laboratorio de Datos** (UBA)
+Trabajo Práctico 01 de la materia **Laboratorio de Datos** (FCEN, UBA)
 
 ## Objetivo
 
