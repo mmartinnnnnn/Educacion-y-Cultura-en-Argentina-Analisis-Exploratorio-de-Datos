@@ -1,17 +1,8 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Created on Sat May 17 20:00:22 2025
-
-@author: lucas
-"""
-
 #%% imports
 
 import pandas as pd
 import duckdb as dd
 import math
-
 
 #%% funciones auxiliares
 
@@ -72,7 +63,6 @@ esIdDeDepto = poblacion["edad"].str.startswith('AREA #',na=False) #booleano para
 poblacion.loc[esIdDeDepto,"id_depto"] = poblacion.loc[esIdDeDepto,"edad"].apply(extraerIdDepto) 
 #en las filas con codigo de area, poner el valor del id en la columna 'id_depto'
 
-
 pd.set_option('future.no_silent_downcasting', True) #para que pandas no moleste con warnings usando ffill()
 poblacion = poblacion.ffill() #llenar valores null con el último valor valido
 
@@ -91,7 +81,6 @@ poblacion["grupo_etario"] = pd.cut(poblacion["edad"],bins=bins,labels = nombres)
 poblacion = poblacion.pivot_table(index = "id_depto", columns = "grupo_etario", values = "poblacion", aggfunc = "sum", fill_value = 0).reset_index()
 #hago la suma de grupo_etario por id_depto
 poblacion = poblacion.rename(columns={"grupo_jardin" : "cantidad_jardin", "grupo_primaria" : "cantidad_primaria", "grupo_secundaria" : "cantidad_secundaria", "grupo_mayores" : "cantidad_mayores"})
-
 
 #%% limpieza provincias y departamentos
 
